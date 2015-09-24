@@ -18,15 +18,15 @@ class WalkingMan {
     neckLength *= height;
     upperBodyLength *= height;
 
-    head = new PVector(0, 0);
-    shoulder = new PVector(0, 0);
-    waist = new PVector(0, 0);
+    head = new PVector();
+    shoulder = new PVector();
+    waist = new PVector();
     arms = new PVector[2][2];
     legs = new PVector[2][2];
     for (int i=0; i<2; i++) {
       for (int j=0; j<2; j++) {
-        arms[i][j] = new PVector(0, 0);
-        legs[i][j] = new PVector(0, 0);
+        arms[i][j] = new PVector();
+        legs[i][j] = new PVector();
       }
       armLengths[i] *= height;
       legLengths[i] *= height;
@@ -36,22 +36,22 @@ class WalkingMan {
 
   float arm1(int side, float phase) {
     phase += side * 0.5;
-    return HALF_PI + sin(phase * TWO_PI) * HALF_PI / 3;
+    return HALF_PI + sin(phase * TWO_PI) * HALF_PI * 0.35;
   }
 
   float arm2(int side, float phase) {
     phase += side * 0.5 - 0.01;
-    return (sin(phase * TWO_PI) - 1) * HALF_PI * 0.1;
+    return (sin(phase * TWO_PI) - 1.5) * HALF_PI * 0.12;
   }
 
   float leg1(int side, float phase) {
     phase += side * 0.5 + 0.5 + 0.08;
-    return HALF_PI + sin(phase * TWO_PI) * HALF_PI * 0.3 - HALF_PI / 15;
+    return HALF_PI + sin(phase * TWO_PI) * HALF_PI * 0.32 - HALF_PI * 0.05;
   }
 
   float leg2(int side, float phase) {
-    phase += side * 0.5 + 0.5 - 0.29;
-    return sin(phase * TWO_PI) * HALF_PI * 0.25 + HALF_PI / 4;
+    phase += side * 0.5 + 0.5 - 0.18;
+    return sin(phase * TWO_PI) * HALF_PI * 0.3 + HALF_PI * 0.25;
   }
 
   void update(float phase) {
