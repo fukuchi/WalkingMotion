@@ -2,6 +2,10 @@
 
 WalkingMotion is a class library that generates 2D pseudo human walking motion by a combination of a couple of trigonometric functions.
 
+## Demo
+
+See the [demo page](https://fukuchi.org/works/shortshort/WalkingMotion/).
+
 ## Synopsis
 
 An instance of the `WalkingMan` class has the following `PVector` variables:
