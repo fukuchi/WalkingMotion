@@ -1,10 +1,10 @@
 float phase = 0.0;
 WalkingMan man;
+
 void setup() {
   size(500, 500);
   man = new WalkingMan(400);
 }
-
 
 void draw() {
   background(0);
