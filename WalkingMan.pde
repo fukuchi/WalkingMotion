@@ -45,12 +45,12 @@ class WalkingMan {
   }
 
   float leg1(int side, float phase) {
-    phase += side * 0.5 + 0.08;
+    phase += side * 0.5 + 0.5 + 0.08;
     return HALF_PI + sin(phase * TWO_PI) * HALF_PI * 0.3 - HALF_PI / 15;
   }
 
   float leg2(int side, float phase) {
-    phase += side * 0.5 - 0.29;
+    phase += side * 0.5 + 0.5 - 0.29;
     return sin(phase * TWO_PI) * HALF_PI * 0.25 + HALF_PI / 4;
   }
 

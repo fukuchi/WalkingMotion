@@ -16,17 +16,23 @@ void draw() {
 
   pushMatrix();
   translate(width / 2, height);
+
+  // left side of the body
+  line(man.shoulder.x, man.shoulder.y, man.arms[0][0].x, man.arms[0][0].y);
+  line(man.arms[0][0].x, man.arms[0][0].y, man.arms[0][1].x, man.arms[0][1].y);
+  line(man.waist.x, man.waist.y, man.legs[0][0].x, man.legs[0][0].y);
+  line(man.legs[0][0].x, man.legs[0][0].y, man.legs[0][1].x, man.legs[0][1].y);
+
+  // trunk of the body
   ellipse(man.head.x, man.head.y, 50, 50);
   line(man.head.x, man.head.y, man.shoulder.x, man.shoulder.y);
   line(man.shoulder.x, man.shoulder.y, man.waist.x, man.waist.y);
-  line(man.shoulder.x, man.shoulder.y, man.arms[0][0].x, man.arms[0][0].y);
-  line(man.arms[0][0].x, man.arms[0][0].y, man.arms[0][1].x, man.arms[0][1].y);
+
+  // right side of the body
   line(man.shoulder.x, man.shoulder.y, man.arms[1][0].x, man.arms[1][0].y);
   line(man.arms[1][0].x, man.arms[1][0].y, man.arms[1][1].x, man.arms[1][1].y);
-  line(man.waist.x, man.waist.y, man.legs[0][0].x, man.legs[0][0].y);
-  line(man.legs[0][0].x, man.legs[0][0].y, man.legs[0][1].x, man.legs[0][1].y);
   line(man.waist.x, man.waist.y, man.legs[1][0].x, man.legs[1][0].y);
   line(man.legs[1][0].x, man.legs[1][0].y, man.legs[1][1].x, man.legs[1][1].y);
+
   popMatrix();
 }
-
