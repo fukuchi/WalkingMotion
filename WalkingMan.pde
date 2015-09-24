@@ -4,15 +4,19 @@ class WalkingMan {
   PVector[][] arms;
   PVector[][] legs;
 
+  float neckLength = 0.13;
+  float upperBodyLength = 0.52;
   float[] armLengths = {
-    0.20, 0.22
+    0.24, 0.25
   };
   float[] legLengths = {
-    0.25, 0.25
+    0.28, 0.3
   };
 
   WalkingMan(float height) {
     this.height = height;
+    neckLength *= height;
+    upperBodyLength *= height;
 
     head = new PVector(0, 0);
     shoulder = new PVector(0, 0);
@@ -54,8 +58,8 @@ class WalkingMan {
     float angle;
 
     head.set(0, 0);
-    shoulder.set(0, this.height * 0.13);
-    waist.set(0, this.height * 0.5);
+    shoulder.set(0, neckLength);
+    waist.set(0, upperBodyLength);
 
     for (int i=0; i<2; i++) {
       angle = arm1(i, phase);
