@@ -4,6 +4,7 @@ WalkingMan man;
 void setup() {
   size(500, 500);
   man = new WalkingMan(400);
+  //man = new RunningMan(400);
 }
 
 void draw() {
@@ -11,7 +12,7 @@ void draw() {
   stroke(255);
   strokeWeight(5);
 
-  phase += 0.01;
+  phase += 0.01; // 0.018 is recommended for RunningMan.
   man.update(phase);
 
   pushMatrix();

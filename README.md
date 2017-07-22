@@ -22,6 +22,9 @@ In order to update the posture of the walking man, call `update(float phase)`. W
 
 X coordinate is relative to the trunk of the body, and Y coordinates is relative to the grounding point of the contacting feet and thus all Y coordinates are negative or zero.
 
+`RunningMan` class provdies a running motion. See comments in WalkingMotion.pde 
+for advanced usage.
+
 ## LICENSE
 
 WalkingMotion is released under the terms of Creative Commons Zero (CC0 1.0). You can copy, modify, distribute and perform the work, even for commercial purpose, all without asking permission. See the LICENSE file for the details.
