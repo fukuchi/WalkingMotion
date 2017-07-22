@@ -13,6 +13,21 @@ class WalkingMan {
     0.28, 0.3
   };
 
+  static float[] params = {
+    0,     // arm1
+    0.35,
+    0,
+    -0.01, // arm2
+    0.12,
+    - HALF_PI * 0.18,
+    0.58, // leg1
+    0.32,
+    - HALF_PI * 0.05,
+    0.5 - 0.288, // leg2
+    0.26,
+    HALF_PI * 0.27
+  };
+
   WalkingMan(float height) {
     this.height = height;
     neckLength *= height;
@@ -35,23 +50,23 @@ class WalkingMan {
   }
 
   float arm1(int side, float phase) {
-    phase += side * 0.5;
-    return HALF_PI + sin(phase * TWO_PI) * HALF_PI * 0.35;
+    phase += side * 0.5 + params[0];
+    return HALF_PI + sin(phase * TWO_PI) * HALF_PI * params[1] + params[2];
   }
 
   float arm2(int side, float phase) {
-    phase += side * 0.5 - 0.01;
-    return (sin(phase * TWO_PI) - 1.5) * HALF_PI * 0.12;
+    phase += side * 0.5 + params[3];
+    return sin(phase * TWO_PI) * HALF_PI * params[4] + params[5];
   }
 
   float leg1(int side, float phase) {
-    phase += side * 0.5 + 0.5 + 0.08;
-    return HALF_PI + sin(phase * TWO_PI) * HALF_PI * 0.32 - HALF_PI * 0.05;
+    phase += side * 0.5 + params[6];
+    return HALF_PI + sin(phase * TWO_PI) * HALF_PI * params[7] + params[8];
   }
 
   float leg2(int side, float phase) {
-    phase += side * 0.5 + 0.5 - 0.288;
-    return sin(phase * TWO_PI) * HALF_PI * 0.26 + HALF_PI * 0.27;
+    phase += side * 0.5 + params[9];
+    return sin(phase * TWO_PI) * HALF_PI * params[10] + params[11];
   }
 
   void update(float phase) {
