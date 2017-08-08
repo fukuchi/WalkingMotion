@@ -21,7 +21,12 @@ class RunningMan extends WalkingMan {
   float calcYOffset() {
     int ip = (int)(phase * 2);
     float dp = phase * 2 - ip - 0.5;
-    return height * (1.07 - (dp * dp) * 0.18);
+    float offset = height * (1.11 - (dp * dp) * 0.18);
+    float lowest = max(legs[0][1].y, legs[1][1].y);
+    if(offset > lowest) {
+      return offset;
+    }
+    return lowest;
   }
 
   void setBasicPositions() {
