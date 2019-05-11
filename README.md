@@ -8,7 +8,7 @@ See the [demo page](https://fukuchi.org/works/shortshort/WalkingMotion/).
 
 ## Synopsis
 
-An instance of the `WalkingMan` class has the following `PVector` variables:
+An instance of the `Walker` class has the following `PVector` variables:
 
 * `head`
 * `shoulder`
@@ -18,11 +18,11 @@ An instance of the `WalkingMan` class has the following `PVector` variables:
 
 `head`, `shoulder` and `waist` are obvious. `arms[0][0]` provides the position of the joint of his right arm, and `arms[0][1]` provides the position of his right hand. `legs[1][0]` provides the joint of his left leg, and so on.
 
-In order to update the posture of the walking man, call `update(float phase)`. Walking motion is a periodic function for phase 0.0-1.0.
+In order to update the posture of the walker, call `update(float phase)`. Walking motion is a periodic function for phase 0.0-1.0.
 
 X coordinate is relative to the trunk of the body, and Y coordinates is relative to the grounding point of the contacting feet and thus all Y coordinates are negative or zero.
 
-`RunningMan` class provdies a running motion. See comments in WalkingMotion.pde 
+`Runner` class provdies a running motion. See comments in WalkingMotion.pde 
 for advanced usage.
 
 ## LICENSE

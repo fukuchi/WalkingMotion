@@ -1,6 +1,6 @@
-class RunningMan extends WalkingMan {
+class Runner extends Walker {
 
-  RunningMan(float height) {
+  Runner(float height) {
     super(height);
     params = new float[] {
       0.08, // arm1

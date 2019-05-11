@@ -1,4 +1,4 @@
-class WalkingMan {
+class Walker {
   float height;
   PVector head, shoulder, waist;
   PVector[][] arms;
@@ -28,7 +28,7 @@ class WalkingMan {
     HALF_PI * 0.27
   };
 
-  WalkingMan(float height) {
+  Walker(float height) {
     this.height = height;
     neckLength *= height;
     upperBodyLength *= height;
