@@ -18,7 +18,7 @@ class Runner extends Walker {
     };
   }
 
-  float calcYOffset() {
+  float calcYOffset(float phase) {
     int ip = (int)(phase * 2);
     float dp = phase * 2 - ip - 0.5;
     float offset = height * (1.11 - (dp * dp) * 0.18);

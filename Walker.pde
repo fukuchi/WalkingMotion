@@ -69,7 +69,7 @@ class Walker {
     return sin(phase * TWO_PI) * HALF_PI * params[10] + params[11];
   }
 
-  float calcYOffset() {
+  float calcYOffset(float phase) {
     return max(legs[0][1].y, legs[1][1].y);
   }
 
@@ -102,7 +102,7 @@ class Walker {
       legs[i][1].add(legs[i][0]);
     }
 
-    float yoffset = calcYOffset();
+    float yoffset = calcYOffset(phase);
     head.sub(0, yoffset, 0);
     shoulder.sub(0, yoffset, 0);
     waist.sub(0, yoffset, 0);
